@@ -20,7 +20,7 @@ def logistic_sigmoid(x,derivative=False):
         return logistic_sigmoid(x)*(1-logistic_sigmoid(x))
 
 class Neuron(object):
-    def __init__(self,weight=Noone,activation=None):
+    def __init__(self,weight=None,activation=None):
         self.weights=weights
         self.activation=activation
 
