@@ -85,17 +85,17 @@ class Layer(object):
             for i in range(len(self.neurons)):
                 current_layer_errors.append(sm[i] - expected[i])
 
-            else:
-                for i in range(len(self.neurons)):
-                    tmp = 0.0
-                    for j in range(len(next_layer.neurons)):
-                        tmp += next_layer.neurons[j].weights[i] * next_layer.neurons[j].delta
+         else:
+            for i in range(len(self.neurons)):
+                tmp = 0.0
+                for j in range(len(next_layer.neurons)):
+                    tmp += next_layer.neurons[j].weights[i] * next_layer.neurons[j].delta
                     current_layer_errors.append(tmp)
 
-            for i in range(len(self.neurons)):
-                self.neurons[i].calculate_delta(current_layer_errors[i])
+         for i in range(len(self.neurons)):
+             self.neurons[i].calculate_delta(current_layer_errors[i])
 
-            return [neuron.delta for neuron in self.neurons]
+         return [neuron.delta for neuron in self.neurons]
 
     def update_weights(self,inputs):
         for neuron in self.neurons:
